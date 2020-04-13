@@ -27,7 +27,7 @@ describe('MikaComponentComponent', () => {
 function doBreakTest(nativeElement: HTMLElement): void {
   let isErrors = false;
 
-  console.error = function() {
+  console.error = function () {
     isErrors = true;
   }
 
