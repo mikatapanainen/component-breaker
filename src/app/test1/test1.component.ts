@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-mika',
-  templateUrl: './mika.component.html',
-  styleUrls: ['./mika.component.scss']
+  selector: 'app-test-1',
+  templateUrl: './test1.component.html',
+  styleUrls: ['./test1.component.scss']
 })
-export class MikaComponent implements OnInit {
+export class Test1Component implements OnInit {
 
   constructor() { }
 
@@ -15,7 +15,10 @@ export class MikaComponent implements OnInit {
   testString: string;
   result: string;
 
-  doThing(): void {
+  doThing1(): void {
+  }
+
+  doThing2(): void {
     this.testString.startsWith("cat");
   }
 }

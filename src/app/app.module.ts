@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MikaComponent } from './mika/mika.component';
+import { Test1Component } from './test1/test1.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MikaComponent
+    Test1Component
   ],
   imports: [
     BrowserModule,
