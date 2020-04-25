@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { doBreakTest } from './utils';
 
 import { MikaComponent } from './mika.component';
 
@@ -19,22 +20,7 @@ describe('MikaComponentComponent', () => {
     fixture.detectChanges();
   });
 
-  it('press the button', () => {
+  it('Do the break test', () => {
     doBreakTest(fixture.debugElement.nativeElement);
   });
 });
-
-function doBreakTest(nativeElement: HTMLElement): void {
-  let isErrors = false;
-
-  console.error = function () {
-    isErrors = true;
-  }
-
-  expect(isErrors).toBe(false);
-
-  let button = nativeElement.querySelector('button');
-  button.click();
-
-  expect(isErrors).toBe(false);
-}
