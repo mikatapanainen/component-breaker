@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Test22Component } from './test22.component';
+import { NullStringComponent } from './null-string.component';
 
-describe('Test22Component', () => {
-  let component: Test22Component;
-  let fixture: ComponentFixture<Test22Component>;
+describe('NullStringComponent', () => {
+  let component: NullStringComponent;
+  let fixture: ComponentFixture<NullStringComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Test22Component ]
+      declarations: [ NullStringComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Test22Component);
+    fixture = TestBed.createComponent(NullStringComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

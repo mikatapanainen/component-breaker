@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mika-test": {
+    "component-breaker": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mika-test",
+            "outputPath": "dist/component-breaker",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mika-test:build"
+            "browserTarget": "component-breaker:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mika-test:build:production"
+              "browserTarget": "component-breaker:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mika-test:build"
+            "browserTarget": "component-breaker:build"
           }
         },
         "test": {
@@ -114,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mika-test:serve"
+            "devServerTarget": "component-breaker:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mika-test:serve:production"
+              "devServerTarget": "component-breaker:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "mika-test"
+  "defaultProject": "component-breaker"
 }

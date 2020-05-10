@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-test22',
-  templateUrl: './test22.component.html',
-  styleUrls: ['./test22.component.scss']
+  selector: 'app-null-string',
+  templateUrl: './null-string.component.html',
+  styleUrls: ['./null-string.component.scss']
 })
-export class Test22Component implements OnInit {
+export class NullStringComponent implements OnInit {
 
   constructor() { }
 
-  testString: string;
-
   ngOnInit(): void {
   }
+
+  testString: string;
 
   doThing1(): void {
   }
