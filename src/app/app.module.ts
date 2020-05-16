@@ -5,13 +5,13 @@ import { FormsModule }    from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NullStringComponent } from './null-string/null-string.component';
-import { StringToNumberFieldComponentComponent } from './string-to-number-field-component/string-to-number-field-component.component';
+import { ArrayItemNotFoundComponent } from './array-item-not-found/array-item-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NullStringComponent,
-    StringToNumberFieldComponentComponent
+    ArrayItemNotFoundComponent
   ],
   imports: [
     BrowserModule,

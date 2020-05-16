@@ -3,9 +3,9 @@ import { isBreak } from './utils';
 
 import { NullStringComponent } from '../null-string/null-string.component';
 
-describe('utils', () => {
-  let component1: NullStringComponent;
-  let fixture1: ComponentFixture<NullStringComponent>;
+describe('utils NullStringComponent', () => {
+  let component: NullStringComponent;
+  let fixture: ComponentFixture<NullStringComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -15,12 +15,12 @@ describe('utils', () => {
   }));
 
   beforeEach(() => {
-    fixture1 = TestBed.createComponent(NullStringComponent);
-    component1 = fixture1.componentInstance;
-    fixture1.detectChanges();
+    fixture = TestBed.createComponent(NullStringComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('NullStringComponent', () => {
-    expect(isBreak(fixture1.debugElement.nativeElement)).toBeTrue();
+    expect(isBreak(fixture)).toBeTrue();
   });
 });
