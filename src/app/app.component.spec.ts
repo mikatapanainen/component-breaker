@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { OkComponent } from './ok/ok.component';
 import { NullStringComponent } from './null-string/null-string.component';
 import { ArrayItemNotFoundComponent } from './array-item-not-found/array-item-not-found.component';
 import { ArrayItemNotFoundWrongKeyTypeComponent } from './array-item-not-found-wrong-key-type/array-item-not-found-wrong-key-type.component';
@@ -14,7 +15,7 @@ describe('AppComponent', () => {
         RouterTestingModule, FormsModule
       ],
       declarations: [
-        AppComponent, NullStringComponent, ArrayItemNotFoundComponent, ArrayItemNotFoundWrongKeyTypeComponent
+        AppComponent, OkComponent, NullStringComponent, ArrayItemNotFoundComponent, ArrayItemNotFoundWrongKeyTypeComponent
       ],
     }).compileComponents();
   }));

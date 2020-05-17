@@ -1,14 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { ArrayItemNotFoundWrongKeyTypeComponent } from './array-item-not-found-wrong-key-type.component';
+import { OkComponent } from './ok.component';
 
-describe('ArrayItemNotFoundWrongKeyTypeComponent', () => {
-  let component: ArrayItemNotFoundWrongKeyTypeComponent;
-  let fixture: ComponentFixture<ArrayItemNotFoundWrongKeyTypeComponent>;
+describe('OkComponent', () => {
+  let component: OkComponent;
+  let fixture: ComponentFixture<OkComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArrayItemNotFoundWrongKeyTypeComponent ],
+      declarations: [ OkComponent ],
       imports: [
         FormsModule
       ]
@@ -17,7 +17,7 @@ describe('ArrayItemNotFoundWrongKeyTypeComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ArrayItemNotFoundWrongKeyTypeComponent);
+    fixture = TestBed.createComponent(OkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

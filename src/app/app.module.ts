@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { NullStringComponent } from './null-string/null-string.component';
 import { ArrayItemNotFoundComponent } from './array-item-not-found/array-item-not-found.component';
 import { ArrayItemNotFoundWrongKeyTypeComponent } from './array-item-not-found-wrong-key-type/array-item-not-found-wrong-key-type.component';
+import { OkComponent } from './ok/ok.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NullStringComponent,
     ArrayItemNotFoundComponent,
-    ArrayItemNotFoundWrongKeyTypeComponent
+    ArrayItemNotFoundWrongKeyTypeComponent,
+    OkComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { isBreak, isBreakWithType, TestType } from './utils';
+import { isBreak, doBreakTestWithType, TestType } from './utils';
 import { FormsModule } from '@angular/forms';
 import { ArrayItemNotFoundWrongKeyTypeComponent } from '../array-item-not-found-wrong-key-type/array-item-not-found-wrong-key-type.component';
 
@@ -28,12 +28,13 @@ describe('utils ArrayItemNotFoundWrongKeyTypeComponent', () => {
   });
 
   it('isBreakWithType', () => {
-    let isErrors = false;
+    let isErrors:boolean = false;
 
     console.error = function () {
         isErrors = true;
     }
 
-    expect(isBreakWithType(fixture, TestType.STRING_INPUTS, isErrors, [], ['a'])).toBeTrue();
+    doBreakTestWithType(fixture, TestType.STRING_INPUTS, [], ['a']);
+    expect(isErrors).toBeTrue();
   });
 });

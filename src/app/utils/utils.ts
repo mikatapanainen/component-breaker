@@ -14,20 +14,20 @@ export function doBreakTest(fixture: ComponentFixture<any>): void {
 }
 
 export function isBreak(fixture: ComponentFixture<any>): boolean {
-    let isErrors = false;
+    let isErrors:boolean = false;
 
     console.error = function () {
         isErrors = true;
     }
 
-    testInputs(fixture, TEST_NUMBERS);
-    testInputs(fixture, TEST_STRINGS);
-    fixture.nativeElement.querySelectorAll('button').forEach(button => button.click());
+    doBreakTestWithType(fixture, TestType.NUMBER_INPUTS, TEST_NUMBERS, TEST_STRINGS);
+    doBreakTestWithType(fixture, TestType.STRING_INPUTS, TEST_NUMBERS, TEST_STRINGS);
+    doBreakTestWithType(fixture, TestType.BUTTON_CLICKS, TEST_NUMBERS, TEST_STRINGS);
 
     return isErrors;
 }
 
-export function isBreakWithType(fixture: ComponentFixture<any>, testType: TestType, isErrors: boolean, testNumbers: string[], testStrings: string[]): boolean {
+export function doBreakTestWithType(fixture: ComponentFixture<any>, testType: TestType, testNumbers: string[], testStrings: string[]): void {
     if (testType === TestType.NUMBER_INPUTS) {
         testInputs(fixture, testNumbers);
     } else if (testType === TestType.STRING_INPUTS) {
@@ -35,8 +35,6 @@ export function isBreakWithType(fixture: ComponentFixture<any>, testType: TestTy
     } else if (testType === TestType.BUTTON_CLICKS) {
         fixture.nativeElement.querySelectorAll('button').forEach(button => button.click());
     }
-
-    return isErrors;
 }
 
 function testInputs(fixture: ComponentFixture<any>, inputValues: string[]): void {
