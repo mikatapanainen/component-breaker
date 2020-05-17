@@ -1,15 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { isBreak, isBreakWithType, TestType } from './utils';
 import { FormsModule } from '@angular/forms';
-import { ArrayItemNotFoundComponent } from '../array-item-not-found/array-item-not-found.component';
+import { ArrayItemNotFoundWrongKeyTypeComponent } from '../array-item-not-found-wrong-key-type/array-item-not-found-wrong-key-type.component';
 
-describe('utils ArrayItemNotFoundComponent', () => {
-  let component: ArrayItemNotFoundComponent;
-  let fixture: ComponentFixture<ArrayItemNotFoundComponent>;
+describe('utils ArrayItemNotFoundWrongKeyTypeComponent', () => {
+  let component: ArrayItemNotFoundWrongKeyTypeComponent;
+  let fixture: ComponentFixture<ArrayItemNotFoundWrongKeyTypeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ArrayItemNotFoundComponent],
+      declarations: [ArrayItemNotFoundWrongKeyTypeComponent],
       imports: [
         FormsModule
       ]
@@ -18,7 +18,7 @@ describe('utils ArrayItemNotFoundComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ArrayItemNotFoundComponent);
+    fixture = TestBed.createComponent(ArrayItemNotFoundWrongKeyTypeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -34,6 +34,6 @@ describe('utils ArrayItemNotFoundComponent', () => {
         isErrors = true;
     }
 
-    expect(isBreakWithType(fixture, TestType.NUMBER_INPUTS, isErrors, ['2'], [])).toBeTrue();
+    expect(isBreakWithType(fixture, TestType.STRING_INPUTS, isErrors, [], ['a'])).toBeTrue();
   });
 });

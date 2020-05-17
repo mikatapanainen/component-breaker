@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { isNumber } from '../utils/component-utils';
 
 @Component({
   selector: 'app-array-item-not-found',
@@ -15,14 +16,10 @@ export class ArrayItemNotFoundComponent implements OnInit {
   }
 
   modelChanged(newObj: any) {
-    if (!this.isNumber(this.index)) {
+    if (!isNumber(this.index)) {
       return;
     }
 
     ['aa', 'bb'][this.index].length;
-  }
-
-  isNumber(stringToCheck: any) { 
-    return !isNaN(parseFloat(stringToCheck)) && !isNaN(stringToCheck - 0) 
   }
 }

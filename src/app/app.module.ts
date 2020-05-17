@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NullStringComponent } from './null-string/null-string.component';
 import { ArrayItemNotFoundComponent } from './array-item-not-found/array-item-not-found.component';
+import { ArrayItemNotFoundWrongKeyTypeComponent } from './array-item-not-found-wrong-key-type/array-item-not-found-wrong-key-type.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NullStringComponent,
-    ArrayItemNotFoundComponent
+    ArrayItemNotFoundComponent,
+    ArrayItemNotFoundWrongKeyTypeComponent
   ],
   imports: [
     BrowserModule,

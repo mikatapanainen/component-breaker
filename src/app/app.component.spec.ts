@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { NullStringComponent } from './null-string/null-string.component';
 import { ArrayItemNotFoundComponent } from './array-item-not-found/array-item-not-found.component';
+import { ArrayItemNotFoundWrongKeyTypeComponent } from './array-item-not-found-wrong-key-type/array-item-not-found-wrong-key-type.component';
 import { FormsModule } from '@angular/forms';
 
 
@@ -13,7 +14,7 @@ describe('AppComponent', () => {
         RouterTestingModule, FormsModule
       ],
       declarations: [
-        AppComponent, NullStringComponent, ArrayItemNotFoundComponent
+        AppComponent, NullStringComponent, ArrayItemNotFoundComponent, ArrayItemNotFoundWrongKeyTypeComponent
       ],
     }).compileComponents();
   }));
