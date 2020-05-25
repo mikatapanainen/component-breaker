@@ -43,8 +43,8 @@ function testInputs(fixture: ComponentFixture<any>, inputValues: string[]): void
     nativeElement.querySelectorAll('input').forEach(input =>
         inputValues.forEach(inputValue => {
             input.value = inputValue;
-            fixture.detectChanges();
             input.dispatchEvent(new Event('input'));
+            fixture.detectChanges();
         })
     );
 }
