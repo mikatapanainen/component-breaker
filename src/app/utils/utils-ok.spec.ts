@@ -1,11 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { isBreak } from './utils';
+import { doBreakTest } from './utils';
 import { FormsModule } from '@angular/forms';
 import { OkComponent } from '../ok/ok.component';
 
-describe('utils NullStringComponent', () => {
+describe('utils OkComponent', () => {
   let component: OkComponent;
   let fixture: ComponentFixture<OkComponent>;
+  let isErrors:boolean;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -18,12 +19,21 @@ describe('utils NullStringComponent', () => {
   }));
 
   beforeEach(() => {
+    isErrors = false;
+    console.error = function () {
+        isErrors = true;
+    }
+
     fixture = TestBed.createComponent(OkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('OkComponent', () => {
-    expect(isBreak(fixture)).toBeFalse();
+  afterEach(async(() => {
+    expect(isErrors).toBe(false);
+  }));
+
+  it('doBreakTest', async() => {
+    doBreakTest(fixture);
   });
 });

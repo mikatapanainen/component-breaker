@@ -1,11 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { isBreak, doBreakTestWithType, TestType } from './utils';
+import { doBreakTest, doBreakTestWithType, TestType } from './utils';
 import { FormsModule } from '@angular/forms';
 import { ArrayItemNotFoundComponent } from '../array-item-not-found/array-item-not-found.component';
 
 describe('utils ArrayItemNotFoundComponent', () => {
   let component: ArrayItemNotFoundComponent;
   let fixture: ComponentFixture<ArrayItemNotFoundComponent>;
+  let isErrors:boolean;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -18,23 +19,25 @@ describe('utils ArrayItemNotFoundComponent', () => {
   }));
 
   beforeEach(() => {
+    isErrors = false;
+    console.error = function () {
+        isErrors = true;
+    }
+
     fixture = TestBed.createComponent(ArrayItemNotFoundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('isBreak', () => {
-    expect(isBreak(fixture)).toBeTrue();
-  });
+  afterEach(async(() => {
+    expect(isErrors).toBe(true);
+  }));
 
-  it('isBreakWithType', () => {
-    let isErrors:boolean = false;
+  it('doBreakTest', async(() => {
+    doBreakTest(fixture);
+  }));
 
-    console.error = function () {
-        isErrors = true;
-    }
-
+  it('doBreakTestWithType', async(() => {
     doBreakTestWithType(fixture, TestType.NUMBER_INPUTS, ['2'], []);
-    expect(isErrors).toBeTrue();
-  });
+  }));
 });

@@ -1,10 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { isBreak, doBreakTestWithType, TestType } from './utils';
+import { doBreakTest, doBreakTestWithType, TestType } from './utils';
 import { NullStringComponent } from '../null-string/null-string.component';
 
 describe('utils NullStringComponent', () => {
   let component: NullStringComponent;
   let fixture: ComponentFixture<NullStringComponent>;
+  let isErrors:boolean;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -14,23 +15,25 @@ describe('utils NullStringComponent', () => {
   }));
 
   beforeEach(() => {
+    isErrors = false;
+    console.error = function () {
+        isErrors = true;
+    }
+
     fixture = TestBed.createComponent(NullStringComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('isBreak', () => {
-    expect(isBreak(fixture)).toBeTrue();
-  });
+  afterEach(async(() => {
+    expect(isErrors).toBe(true);
+  }));
 
-  it('isBreakWithType', () => {
-    let isErrors:boolean = false;
+  it('doBreakTest', async(() => {
+    doBreakTest(fixture);
+  }));
 
-    console.error = function () {
-        isErrors = true;
-    }
-
+  it('doBreakTestWithType', async(() => {
     doBreakTestWithType(fixture, TestType.BUTTON_CLICKS, [], []);
-    expect(isErrors).toBeTrue();
-  });
+  }));
 });
