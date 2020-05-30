@@ -9,7 +9,14 @@ export class OkComponent implements OnInit {
 
   constructor() { }
 
+  testString: string;
+  testLength: number;
+
   ngOnInit(): void {
+    this.testString = 'aaa';
   }
 
+  doThing() {
+    this.testLength = this.testString.length;
+  }
 }

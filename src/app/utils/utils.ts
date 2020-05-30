@@ -44,7 +44,6 @@ function testInputs(fixture: ComponentFixture<any>, inputValues: string[]): void
         inputValues.forEach(inputValue => {
             input.value = inputValue;
             input.dispatchEvent(new Event('input'));
-            fixture.detectChanges();
         })
     );
 }

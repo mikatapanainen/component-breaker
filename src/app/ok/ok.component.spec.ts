@@ -25,4 +25,11 @@ describe('OkComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should work when button pressed', () => {
+    const nativeElement = fixture.nativeElement;
+    nativeElement.querySelectorAll('button')[0].click();
+    fixture.detectChanges();
+    expect(nativeElement.querySelector('p').textContent).toBe('3');
+  });
 });
